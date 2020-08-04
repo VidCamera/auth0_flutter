@@ -43,6 +43,11 @@ class WebAuth {
     return this;
   }
 
+  /// Get connection from WebAuth
+  String connectionType() {
+    return _parameters['connection'];
+  }
+
   /// Scopes that will be requested during auth
   /// a scope value like: `openid email`
   WebAuth scope(String value) {
