@@ -44,9 +44,7 @@ class WebAuthController: NSObject, FlutterPlugin {
                         sendResult(result, data: credentials.toJSON(), error: nil)
                         
                     case .failure(let error):
-                        let e = WebAuthErrorCustom(error as! WebAuthError)
-                        
-                        sendResult(result, data: nil, error: e)
+                        sendResult(result, data: nil, error: error)
                     }
                 }
                 
