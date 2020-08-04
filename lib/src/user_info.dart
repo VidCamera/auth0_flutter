@@ -88,6 +88,8 @@ class UserInfo {
       return null;
     }
 
+    print("JSON: ${json}");
+
     final name = json['name'];
     final givenName = json['givenName'];
     final familyName = json['familyName'];
