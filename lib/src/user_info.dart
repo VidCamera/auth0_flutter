@@ -7,6 +7,8 @@ class UserInfo {
     "given_name",
     "family_name",
     "middle_name",
+    "first_name",
+    "last_name",
     "nickname",
     "preferred_username",
     "profile",
@@ -29,6 +31,8 @@ class UserInfo {
   final String givenName;
   final String familyName;
   final String middleName;
+  final String firstName;
+  final String lastName;
   final String nickname;
   final String preferredUsername;
 
@@ -53,28 +57,29 @@ class UserInfo {
 
   final Map<String, dynamic> customClaims;
 
-  UserInfo(
-      {this.sub,
-      this.name,
-      this.givenName,
-      this.familyName,
-      this.middleName,
-      this.nickname,
-      this.preferredUsername,
-      this.profile,
-      this.picture,
-      this.website,
-      this.email,
-      this.emailVerified,
-      this.gender,
-      this.birthdate,
-      this.zoneinfoIdentifier,
-      this.localeIdentifier,
-      this.phoneNumber,
-      this.phoneNumberVerified,
-      this.address,
-      this.updatedAt,
-      this.customClaims});
+  UserInfo({this.sub,
+    this.name,
+    this.givenName,
+    this.familyName,
+    this.middleName,
+    this.firstName,
+    this.lastName,
+    this.nickname,
+    this.preferredUsername,
+    this.profile,
+    this.picture,
+    this.website,
+    this.email,
+    this.emailVerified,
+    this.gender,
+    this.birthdate,
+    this.zoneinfoIdentifier,
+    this.localeIdentifier,
+    this.phoneNumber,
+    this.phoneNumberVerified,
+    this.address,
+    this.updatedAt,
+    this.customClaims});
 
   factory UserInfo.fromJSON(Map<String, dynamic> json) {
     final sub = json['sub'];
@@ -87,6 +92,8 @@ class UserInfo {
     final givenName = json['givenName'];
     final familyName = json['familyName'];
     final middleName = json['middleName'];
+    final firstName = json['firstName'];
+    final lastName = json['lastName'];
     final nickname = json['nickname'];
     final preferredUsername = json['preferredUsername'];
     final profile = json['profile'];
@@ -112,6 +119,8 @@ class UserInfo {
         givenName: givenName,
         familyName: familyName,
         middleName: middleName,
+        firstName: firstName,
+        lastName: lastName,
         nickname: nickname,
         preferredUsername: preferredUsername,
         profile: profile != null ? Uri.tryParse(profile) : null,
